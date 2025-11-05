@@ -79,7 +79,7 @@ void randWinMessage()
 
 	switch (randNum)
 	{
-		case 1: std::cout << "You nailed it! That’s the number, great job!" << std::endl;
+		case 1: std::cout << "You nailed it! That's the number, great job!" << std::endl;
 				break;
 		case 2: std::cout << "Mind reader alert! You guessed it perfectly." << std::endl;
 				break;
