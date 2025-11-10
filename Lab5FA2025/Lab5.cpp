@@ -30,7 +30,11 @@ int main()
 	return 0;
 }
 
-//controls the guessing game part
+/*
+	Preconditions: None. (Assumes standard input/output is available)
+    Postconditions: Updates winCount or loseCount depending on outcome, and calls playAgain() when a game round ends.
+	Controls the main number guessing game logic
+*/
 void playingGame()
 {
 	//generates a new number for each game
@@ -72,7 +76,11 @@ void playingGame()
 
 }
 
-//randomly selects one of the ten win messages to display
+/*
+	Preconditions: None.
+    Postconditions: winCount is incremented by one. Calls playAgain().
+	randomly selects one of the ten win messages to display
+*/
 void randWinMessage()
 {
 	int randNum = rand() % 10;
@@ -104,7 +112,11 @@ void randWinMessage()
 	playAgain();
 }
 
-//randomly selects one of the ten lose messages to display
+/*
+	Preconditions: None.
+    Postconditions: loseCOunt is incremented by one. Calls playAgain().
+	randomly selects one of the ten lose messages to display
+*/
 void randLoseMessage()
 {
 	int randNum = rand() % 10;
@@ -136,7 +148,11 @@ void randLoseMessage()
 	playAgain();
 }
 
-//randomly selects one of the ten play again messages to display
+/*
+	Preconditions: None.
+    Postconditions: None.
+	randomly selects one of the ten play again messages to display
+*/
 void randPlayAgainMessage()
 {
 	int randNum = rand() % 10;
@@ -166,7 +182,11 @@ void randPlayAgainMessage()
 
 }
 
-//asks the user if they'd like to play another game
+/*
+	Preconditions: User must be ready to provide input ("yes" or "no").
+	Postconditions: Either starts another game, or prints game stats and ends program.
+	asks the user if they'd like to play another game
+*/
 void playAgain()
 {
 	randPlayAgainMessage();
@@ -179,6 +199,7 @@ void playAgain()
 	if (playGame == "yes" || playGame == "Yes" || playGame == "YES")
 	{
 		playingGame();
+		//post conditon: runs playingGame() again
 	}
 	else if (playGame == "no" || playGame == "No" || playGame == "NO") //else, ends the program and displays messages
 	{
