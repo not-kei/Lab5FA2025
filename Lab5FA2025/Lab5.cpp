@@ -27,6 +27,12 @@ int main()
 	std::cout << "Welcome to the Number Guessing Game." << std::endl;
 	playingGame(); //starts the game
 
+	//if the stream has entered a failed state, end program with error code
+	if (!std::cin)
+	{
+		return 1;
+	}
+
 	return 0;
 }
 
@@ -52,6 +58,13 @@ void playingGame()
 	{
 		//takes input from user
 		std::cin >> curGuess;
+
+		//if given invalid input, ends the loop and returns to main()
+		if (!std::cin)
+		{
+			std::cout << "Invalid, please restart the program and use integer values.";
+			return;
+		}
 
 		//checks if the guessed number is the selected number
 		if (curGuess == randomNumber)
