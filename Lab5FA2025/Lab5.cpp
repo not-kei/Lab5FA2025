@@ -11,6 +11,7 @@
 #include <cstdlib>
 #include <istream>
 
+//Function Prototypes
 void playingGame();
 void randWinMessage();
 void randLoseMessage();
