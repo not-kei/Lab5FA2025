@@ -50,7 +50,7 @@ void playingGame()
 
 	//variables to track how many guesses the user has left 
 	int curGuess;
-	int guessAttempts = 20;
+	int guessAttempts = 1;
 
 	std::cout << "\n\nI have decided on a random number. You have 20 attempts to guess it. " << std::endl;
 
@@ -210,19 +210,21 @@ void playAgain()
 	std::string playGame;
 	std::cin >> playGame;
 
+	//loops until proper input is received 
+	do 
+	{
+		std::cout << "Sorry, I don't understand. Please response with yes or no." << std::endl;
+		std::cin >> playGame;
+	} while (playGame != "yes" && playGame != "no");
+
+
 	//if user inputs yes, plays the game again
-	if (playGame == "yes" || playGame == "Yes" || playGame == "YES")
+	if (playGame == "yes")
 	{
 		playingGame();
-		//post conditon: runs playingGame() again
 	}
-	else if (playGame == "no" || playGame == "No" || playGame == "NO") //else, ends the program and displays messages
+	else if (playGame == "no") //else, ends the program and displays messages
 	{
 		std::cout << "\nThank you for playing! Here are your stats: \n Wins: " << winCount << "\n Lose: " << loseCount << std::endl;
-	}
-	else //makes sure expected input is given, loops this function until proper input is received
-	{
-		std::cout << "Sorry, I don't understand. Please reply with yes or no." << std::endl;
-		playAgain();
 	}
 }
