@@ -122,6 +122,7 @@ void randWinMessage()
 	}
 
 	winCount = winCount++; //tracking how many wins the user gets
+	randPlayAgainMessage();
 	playAgain();
 }
 
@@ -158,6 +159,7 @@ void randLoseMessage()
 	}
 
 	loseCount = loseCount++; //tracking how many loses the user gets
+	randPlayAgainMessage();
 	playAgain();
 }
 
@@ -198,11 +200,10 @@ void randPlayAgainMessage()
 /*
 	Preconditions: User must be ready to provide input ("yes" or "no").
 	Postconditions: Either starts another game, or prints game stats and ends program.
-	asks the user if they'd like to play another game
+	Determines if program continues running, or displays the stats and ends
 */
 void playAgain()
 {
-	randPlayAgainMessage();
 
 	//take input from user
 	std::string playGame;
